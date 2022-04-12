@@ -13,23 +13,27 @@ let computerSelection= function() {
     //     return playerChoice;
     // }
     
-    let textNode=document.createTextNode("")
-        document.body.appendChild(textNode);
+    let pChoiceBox= document.getElementById("pChoiceBox");
+
+    let textNode=document.createTextNode("Choose your Weapon")
+        pChoiceBox.appendChild(textNode);
     
+    let rexultBox=document.getElementById("rexultBox");
     let rexultNode=document.createTextNode("");
-        document.body.appendChild(rexultNode);
+        rexultBox.appendChild(rexultNode);
 
     
 
 
     let playerWins=0
     let computerWins=0
-
+    let scoreBox1=document.getElementById("scoreBox1");
     let pWinsCountNode=document.createTextNode("player win count="+playerWins)
-        document.body.appendChild(pWinsCountNode);
+        scoreBox1.appendChild(pWinsCountNode);
 
+    let scoreBox2=document.getElementById("scoreBox2");
     let cWinsCountNode=document.createTextNode("computer win count="+computerWins)
-        document.body.appendChild(cWinsCountNode);
+        scoreBox2.appendChild(cWinsCountNode);
 
     let winRound= function(roundOutcome){
         rexultNode.nodeValue=(roundOutcome);
@@ -84,6 +88,7 @@ buttonRock.addEventListener("click", rockFunction);
 
 function rockFunction (){
     textNode.nodeValue="you chose rock";
+    rexultNode.nodeValue=""
     return playerChoice="rock";
     
 }
@@ -93,6 +98,7 @@ buttonPaper.addEventListener("click", paperFunction);
 
 function paperFunction (){
     textNode.nodeValue="you chose paper";
+    rexultNode.nodeValue=""
     return playerChoice="paper";
     }
 
@@ -101,6 +107,7 @@ buttonScissors.addEventListener("click", scissorsFunction);
 
 function scissorsFunction (){
     textNode.nodeValue="you chose scissors";
+    rexultNode.nodeValue=""
     return playerChoice="scissors";
     
 }
@@ -112,3 +119,4 @@ function newRoundFunction(){
     computerSelection();
     playRound(computerChoice,playerChoice);
 }
+;
